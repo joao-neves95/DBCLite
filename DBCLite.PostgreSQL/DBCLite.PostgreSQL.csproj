@@ -11,6 +11,10 @@
     <RepositoryType>Git</RepositoryType>
     <Copyright>João Pedro Martins Neves</Copyright>
     <NeutralLanguage>en</NeutralLanguage>
+    <PackageId>DBCLite.PostgreSQL</PackageId>
+    <Product>DBCLite.PostgreSQL</Product>
+    <AssemblyName>DBCLite.PostgreSQL</AssemblyName>
+    <RootNamespace>DBCLite.PostgreSQL</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

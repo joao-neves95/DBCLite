@@ -12,17 +12,17 @@ using System.Data.Common;
 using Npgsql;
 using DBCLite.Models;
 
-namespace DBCLite.Providers
+namespace DBCLite.PostgreSQL
 {
-    public class PostgreDBC : DBCBase, IDBC
+    public class PostgresDBC : DBCBase, IDBC
     {
         #region CONTRUCTORS
 
-        public PostgreDBC()
+        public PostgresDBC()
         {
         }
 
-        public PostgreDBC(string connectionString) : base( connectionString )
+        public PostgresDBC(string connectionString) : base( connectionString )
         {
         }
 
