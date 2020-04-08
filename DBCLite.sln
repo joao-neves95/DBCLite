@@ -10,9 +10,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		DBCLite.sln.licenseheader = DBCLite.sln.licenseheader
 		LICENSE.md = LICENSE.md
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBCLite.Providers", "DBCLite.Providers\DBCLite.Providers.csproj", "{6B6FE8B5-B22E-4642-8296-AED950C91F8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +27,10 @@ Global
 		{CF778FC1-7B2D-4781-90CD-739344C2391A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF778FC1-7B2D-4781-90CD-739344C2391A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF778FC1-7B2D-4781-90CD-739344C2391A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B6FE8B5-B22E-4642-8296-AED950C91F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6FE8B5-B22E-4642-8296-AED950C91F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6FE8B5-B22E-4642-8296-AED950C91F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6FE8B5-B22E-4642-8296-AED950C91F8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
