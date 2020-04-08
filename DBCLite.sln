@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.98
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBCLite", "DBCLite\DBCLite.csproj", "{CF778FC1-7B2D-4781-90CD-739344C2391A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{43FB4410-5AAE-44D9-B215-1FA0B86D299E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF778FC1-7B2D-4781-90CD-739344C2391A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF778FC1-7B2D-4781-90CD-739344C2391A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF778FC1-7B2D-4781-90CD-739344C2391A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF778FC1-7B2D-4781-90CD-739344C2391A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B922CACA-C938-4DBA-8A54-05775ABCADDC}
+	EndGlobalSection
+EndGlobal
