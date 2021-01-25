@@ -10,6 +10,8 @@
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <RepositoryType>Git</RepositoryType>
     <NeutralLanguage>en</NeutralLanguage>
+    <PackageProjectUrl>https://github.com/joao-neves95/DBCLite</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/joao-neves95/DBCLite</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

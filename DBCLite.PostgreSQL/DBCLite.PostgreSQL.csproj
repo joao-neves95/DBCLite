@@ -15,6 +15,8 @@
     <Product>DBCLite.PostgreSQL</Product>
     <AssemblyName>DBCLite.PostgreSQL</AssemblyName>
     <RootNamespace>DBCLite.PostgreSQL</RootNamespace>
+    <PackageProjectUrl>https://github.com/joao-neves95/DBCLite</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/joao-neves95/DBCLite</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
