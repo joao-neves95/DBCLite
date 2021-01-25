@@ -7,23 +7,28 @@
  *
  */
 
-using System;
 using System.Threading.Tasks;
 using System.Data.Common;
+
 using Npgsql;
+
 using DBCLite.Models;
 
 namespace DBCLite.PostgreSQL
 {
-    public class PostgresDBC : DBCBase, IDBC
+    /// <summary>
+    /// Implementation of a PostgreSQL DBContext, using Npgsql.
+    ///
+    /// </summary>
+    public class PostgresDBContext : DBContextBase, IDBContext
     {
         #region CONTRUCTORS
 
-        public PostgresDBC()
+        public PostgresDBContext()
         {
         }
 
-        public PostgresDBC(string connectionString) : base( connectionString )
+        public PostgresDBContext(string connectionString) : base( connectionString )
         {
         }
 
@@ -33,30 +38,22 @@ namespace DBCLite.PostgreSQL
 
         public async Task<DbConnection> OpenDBConnectionAsync()
         {
-            return await this.OpenDBConnectionAsync( this._connectionString );
+            return await this.OpenDBConnectionAsync( this._connectionString ).ConfigureAwait( false );
         }
 
         public async Task<DbConnection> OpenDBConnectionAsync(DBConnectionString dBConnectionString)
         {
-            return await this.OpenDBConnectionAsync( dBConnectionString.ToPostreSQLConnectionString() );
+            return await this.OpenDBConnectionAsync( dBConnectionString.ToNpgsqlConnectionString() ).ConfigureAwait( false );
         }
 
         public async Task<DbConnection> OpenDBConnectionAsync(string connectionString)
         {
-            try
-            {
-                base._dbConnection = new NpgsqlConnection( connectionString );
-                base._connectionString = connectionString;
-                await base._dbConnection.OpenAsync();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine( e.Message );
-                Console.WriteLine( e.StackTrace );
-                throw;
-            }
+            base._DbConnection = new NpgsqlConnection( connectionString );
+            base._connectionString = connectionString;
+            await base._DbConnection.OpenAsync().ConfigureAwait( false );
+            this._DbConnection.Disposed += base.DisposedEventHandler;
 
-            return base._dbConnection;
+            return base._DbConnection;
         }
 
         #endregion DB CONNECTION

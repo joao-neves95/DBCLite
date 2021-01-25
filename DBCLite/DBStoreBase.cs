@@ -9,18 +9,20 @@
 
 using System;
 
+using Dapper;
+
 namespace DBCLite
 {
     public abstract class DBStoreBase
     {
-        protected readonly IDBC _dBContext;
-
-        public DBStoreBase(IDBC dBContext)
+        protected DBStoreBase(IDBContext dBContext)
         {
-            this._dBContext = dBContext;
+            this.DbContext = dBContext;
         }
 
         #region IDisposable Support
+
+        protected readonly IDBContext DbContext;
 
         private bool disposedValue = false;
 
@@ -28,8 +30,8 @@ namespace DBCLite
         {
             if (!disposedValue)
             {
-                this._dBContext.Dispose();
-                disposedValue = true;
+                this.DbContext.Dispose();
+                this.disposedValue = true;
             }
         }
 
@@ -40,7 +42,7 @@ namespace DBCLite
 
         public void Dispose()
         {
-            Dispose( true );
+            this.Dispose( true );
             GC.SuppressFinalize( this );
         }
 
