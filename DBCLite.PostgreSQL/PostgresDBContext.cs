@@ -20,7 +20,7 @@ namespace DBCLite.PostgreSQL
     /// Implementation of a PostgreSQL DBContext, using Npgsql.
     ///
     /// </summary>
-    public class PostgresDBContext : DBContextBase, IDBContext
+    public class PostgresDBContext : DBContextBase
     {
         #region CONTRUCTORS
 
@@ -36,17 +36,17 @@ namespace DBCLite.PostgreSQL
 
         #region DB CONNECTION
 
-        public async Task<DbConnection> OpenDBConnectionAsync()
+        public override async Task<DbConnection> OpenDBConnectionAsync()
         {
             return await this.OpenDBConnectionAsync( this._connectionString ).ConfigureAwait( false );
         }
 
-        public async Task<DbConnection> OpenDBConnectionAsync(DBConnectionString dBConnectionString)
+        public override async Task<DbConnection> OpenDBConnectionAsync(DBConnectionString dBConnectionString)
         {
             return await this.OpenDBConnectionAsync( dBConnectionString.ToNpgsqlConnectionString() ).ConfigureAwait( false );
         }
 
-        public async Task<DbConnection> OpenDBConnectionAsync(string connectionString)
+        public override async Task<DbConnection> OpenDBConnectionAsync(string connectionString)
         {
             base._DbConnection = new NpgsqlConnection( connectionString );
             base._connectionString = connectionString;

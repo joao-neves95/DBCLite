@@ -10,12 +10,15 @@
 using System;
 using System.Data;
 using System.Data.Common;
+using System.Threading.Tasks;
 
 using Dapper;
 
+using DBCLite.Models;
+
 namespace DBCLite
 {
-    public abstract class DBContextBase : IDisposable
+    public abstract class DBContextBase : IDBContext
     {
         protected DBContextBase()
         {
@@ -25,6 +28,8 @@ namespace DBCLite
         {
             this._connectionString = connectionString;
         }
+
+        #region PROPERTIES
 
         protected void DisposedEventHandler(object? sender, EventArgs e)
         {
@@ -42,6 +47,8 @@ namespace DBCLite
                 return this._DbConnection;
             }
         }
+
+        #endregion PROPERTIES
 
         #region IDisposable Support
 
@@ -81,5 +88,11 @@ namespace DBCLite
         }
 
         #endregion IDisposable Support
+
+        public abstract Task<DbConnection> OpenDBConnectionAsync();
+
+        public abstract Task<DbConnection> OpenDBConnectionAsync(DBConnectionString dBConnectionString);
+
+        public abstract Task<DbConnection> OpenDBConnectionAsync(string connectionString);
     }
 }

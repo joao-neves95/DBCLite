@@ -13,7 +13,7 @@ using Dapper;
 
 namespace DBCLite
 {
-    public abstract class DBStoreBase
+    public abstract class DBStoreBase : IDisposable
     {
         protected DBStoreBase(IDBContext dBContext)
         {
@@ -37,7 +37,7 @@ namespace DBCLite
 
         ~DBStoreBase()
         {
-            Dispose( false );
+            this.Dispose( false );
         }
 
         public void Dispose()
