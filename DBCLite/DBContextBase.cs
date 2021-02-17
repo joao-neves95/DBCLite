@@ -89,6 +89,11 @@ namespace DBCLite
 
         #endregion IDisposable Support
 
+        public void SetConnectionString(string connectionString)
+        {
+            this._connectionString = connectionString;
+        }
+
         public abstract Task<DbConnection> OpenDBConnectionAsync();
 
         public abstract Task<DbConnection> OpenDBConnectionAsync(DBConnectionString dBConnectionString);

@@ -47,5 +47,10 @@ namespace DBCLite
         }
 
         #endregion IDisposable Support
+
+        public void SetConnectionString(string connectionString)
+        {
+            this.DbContext.SetConnectionString( connectionString );
+        }
     }
 }

@@ -16,6 +16,10 @@ namespace DBCLite
 {
     public interface IDBContext : IDisposable
     {
+        DbConnection DbConnection { get; }
+
+        void SetConnectionString(string connectionString);
+
         /// <summary>
         /// Opens the inner <see cref="DbConnection"/> using the already existing inner connection string.
         ///
@@ -37,7 +41,5 @@ namespace DBCLite
         /// <param name="connectionString"> Use <see cref="DBConnectionString"/> </param>
         /// <returns></returns>
         Task<DbConnection> OpenDBConnectionAsync(string connectionString);
-
-        DbConnection DbConnection { get; }
     }
 }
