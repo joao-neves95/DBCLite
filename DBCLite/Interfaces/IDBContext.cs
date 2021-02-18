@@ -14,7 +14,7 @@ using DBCLite.Models;
 
 namespace DBCLite
 {
-    public interface IDBContext : IDisposable
+    public interface IDBContext : IDisposable, IAsyncDisposable
     {
         DbConnection DbConnection { get; }
 

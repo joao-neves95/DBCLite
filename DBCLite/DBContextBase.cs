@@ -67,24 +67,38 @@ namespace DBCLite
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!_disposed && this._DbConnection != null && this._DbConnection.State != ConnectionState.Closed)
+            if (this._disposed || this._DbConnection == null)
             {
-                if (this._DbConnection.State == ConnectionState.Open)
-                {
-                    this._DbConnection.Close();
-                }
-
-                if (this._DbConnection.State != ConnectionState.Connecting &&
-                    this._DbConnection.State != ConnectionState.Executing &&
-                    this._DbConnection.State != ConnectionState.Fetching
-                )
-                {
-                    this._DbConnection.Dispose();
-                }
-
-                this._DbConnection = null;
-                _disposed = true;
+                return;
             }
+
+            if (this._DbConnection.State != ConnectionState.Closed)
+            {
+                this._DbConnection.Close();
+            }
+
+            this._DbConnection.Dispose();
+
+            this._DbConnection = null;
+            _disposed = true;
+        }
+
+        public async ValueTask DisposeAsync()
+        {
+            if (this._disposed || this._DbConnection == null)
+            {
+                return;
+            }
+
+            if (this._DbConnection.State != ConnectionState.Closed)
+            {
+                await this._DbConnection.CloseAsync();
+            }
+
+            await this._DbConnection.DisposeAsync();
+
+            this._DbConnection = null;
+            _disposed = true;
         }
 
         #endregion IDisposable Support

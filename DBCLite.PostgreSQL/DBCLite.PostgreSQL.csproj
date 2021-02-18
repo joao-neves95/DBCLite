@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>2.0.0.3</Version>
+    <Version>2.0.0.4</Version>
     <Authors>João Pedro Martins Neves (_SHIVAYL_)</Authors>
     <Company>João Pedro Martins Neves (_SHIVAYL_)</Company>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
