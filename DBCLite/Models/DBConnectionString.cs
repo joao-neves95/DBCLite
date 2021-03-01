@@ -138,11 +138,6 @@ namespace DBCLite.Models
 
         #region SQLServer
 
-        /// <summary>
-        /// NOT TESTED.
-        ///
-        /// </summary>
-        /// <returns></returns>
         public string ToSQLServerConnectionString()
         {
             if (string.IsNullOrEmpty( this.Port ))
@@ -159,21 +154,11 @@ namespace DBCLite.Models
                 }; Database={this.Database}; User Id={this.User}; Password={this.Password};";
         }
 
-        /// <summary>
-        /// NOT TESTED.
-        ///
-        /// </summary>
-        /// <returns></returns>
         public string ToSQLServerTrustedConnectionString()
         {
             return this.ToSQLServerConnectionString() + " Trusted_Connection=True;";
         }
 
-        /// <summary>
-        /// NOT TESTED.
-        ///
-        /// </summary>
-        /// <returns></returns>
         public string ToSQLServerIPConnectionString()
         {
             return $"Data Source={this.ServerAddress}; Network Library=DBMSSOCN; Initial Catalog={this.Database}; User ID={this.User}; Password={this.Password};";
